@@ -5,5 +5,28 @@
     <link>https://labeebmm.github.io/ClipIt-updates/appcast.xml</link>
     <description>Most recent changes with links to updates.</description>
     <language>en</language>
+    <item>
+      <title>Version 1.0.1</title>
+      <description><![CDATA[
+        <h3>ClipIt v1.0.1</h3>
+        <ul>
+          <li>Fixed: Accessibility permission now persists across restarts</li>
+          <li>Fixed: Proper entitlements and Developer ID signing</li>
+          <li>Fixed: Bundle identifier for correct macOS app identification</li>
+          <li>Fixed: App icon shows correctly in system dialogs</li>
+          <li>Added: Sparkle OTA updates</li>
+          <li>Added: Universal Binary (Intel + Apple Silicon)</li>
+        </ul>
+      ]]></description>
+      <sparkle:version>2</sparkle:version>
+      <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <pubDate>Tue, 29 Apr 2026 19:09:00 -0400</pubDate>
+      <enclosure
+        url="https://github.com/labeebmm/ClipIt-updates/releases/download/v1.0.1/ClipIt.dmg"
+        sparkle:edSignature="G6G/gRvIw55tDJHyZK22KuW5U2Zir89JicGyJ2EsybxyeyFVV0g2le0QGC2oRCZZLRGVMfZrbhHfEdcJY061AA=="
+        length="3546308"
+        type="application/octet-stream" />
+    </item>
   </channel>
 </rss>
