@@ -6,23 +6,15 @@
     <description>Most recent changes with links to updates.</description>
     <language>en</language>
     <item>
-      <title>Version 1.0.4</title>
-      <description><![CDATA[
-        <h3>ClipIt v1.0.4</h3>
-        <ul>
-          <li>Default max items now 15 (was 500)</li>
-          <li>Max items setting now persists correctly</li>
-          <li>Added Apply button with "Saved" confirmation</li>
-        </ul>
-      ]]></description>
-      <sparkle:version>5</sparkle:version>
-      <sparkle:shortVersionString>1.0.4</sparkle:shortVersionString>
+      <title>Version 1.0.5</title>
+      <sparkle:version>6</sparkle:version>
+      <sparkle:shortVersionString>1.0.5</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-      <pubDate>Sun, 04 May 2026 14:23:00 -0400</pubDate>
+      <pubDate>Wed, 02 Sep 2026 00:33:11 -0400</pubDate>
       <enclosure
-        url="https://github.com/labeebmm/ClipIt-updates/releases/download/v1.0.4/ClipIt-1.0.4.dmg"
-        sparkle:edSignature="Z0LHBKmkLNdou54f908qUUhg7FE5g128U0ylIDw8ALazyufsDWJF2EFhidShcKrXxqdjrYo+8TlEPZF5RPNlAQ=="
-        length="3740262"
+        url="https://github.com/labeebmm/ClipIt-updates/releases/download/v1.0.5/ClipIt.dmg"
+        sparkle:edSignature="lfKs/6hQiTW71X4XdufxQ6k/qpEg6O5KwCNOA3f+eTWd0C7oF3lMMnVY6PQJrBcFFFeTIPfs0I1nVapXLy53Cw=="
+        length="3580200"
         type="application/octet-stream" />
     </item>
   </channel>

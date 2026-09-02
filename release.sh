@@ -1,13 +1,19 @@
 #!/bin/bash
-# Usage: ./release.sh <version> <path-to-dmg>
-# Example: ./release.sh 1.1.0 ~/Downloads/ClipIt.dmg
+# Usage: ./release.sh <version> <build> <path-to-dmg>
+# Example: ./release.sh 1.1.0 7 ~/Downloads/ClipIt.dmg
+#
+# <build> must be CFBundleVersion. Sparkle compares sparkle:version against
+# CFBundleVersion, NOT against the marketing version. Passing "1.1.0" here
+# makes Sparkle read the update as OLDER than an installed build of "7", and
+# it silently never offers the update.
 
 VERSION=$1
-DMG_PATH=$2
+BUILD=$2
+DMG_PATH=$3
 SPARKLE_BIN=$(find ~/Library/Developer/Xcode/DerivedData/ClipIt-*/SourcePackages/artifacts -name "sign_update" 2>/dev/null | head -1)
 
-if [ -z "$VERSION" ] || [ -z "$DMG_PATH" ]; then
-    echo "Usage: ./release.sh <version> <path-to-dmg>"
+if [ -z "$VERSION" ] || [ -z "$BUILD" ] || [ -z "$DMG_PATH" ]; then
+    echo "Usage: ./release.sh <version> <build> <path-to-dmg>"
     exit 1
 fi
 
@@ -17,7 +23,7 @@ LENGTH=$(stat -f%z "$DMG_PATH")
 SPARKLE_ATTRS=$(echo "$SIGNATURE" | grep -o 'sparkle:edSignature="[^"]*"')
 SPARKLE_SIG=$(echo "$SPARKLE_ATTRS" | sed 's/sparkle:edSignature="//;s/"//')
 
-echo "Version: $VERSION"
+echo "Version: $VERSION (build $BUILD)"
 echo "Length: $LENGTH"
 echo "Signature: $SPARKLE_SIG"
 
@@ -32,7 +38,7 @@ cat > appcast.xml << APPCAST
     <language>en</language>
     <item>
       <title>Version $VERSION</title>
-      <sparkle:version>$VERSION</sparkle:version>
+      <sparkle:version>$BUILD</sparkle:version>
       <sparkle:shortVersionString>$VERSION</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
       <pubDate>$(date -R)</pubDate>
